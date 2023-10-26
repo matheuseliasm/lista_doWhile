@@ -1,23 +1,67 @@
 <meta charset="UTF-8">
-<script>
-    /*
-    Problema: Pesquisa de Idade
-    Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
+    <script>
+        /*
+        Problema: Pesquisa de Idade
+        Foi feita uma pesquisa entre os habitantes de uma região. Foram coletados os dados de idade, sexo (M/F) e salário. Faça um programa que calcule e mostre:
 
-    a) A média dos salários do grupo;
-    b) A maior e a menor idade do grupo;
-    c) A quantidade de mulheres na região;
-    d) A idade e o sexo da pessoa que possui o menor salário;
+        a) A média dos salários do grupo;
+        b) A maior e a menor idade do grupo;
+        c) A quantidade de mulheres na região;
+        d) A idade e o sexo da pessoa que possui o menor salário;
 
-    Finalize a entrada de dados ao ser digitada uma idade negativa.
-    */
+        Finalize a entrada de dados ao ser digitada uma idade negativa.
+        */
 
-    //Entrada
+        //Entrada
+        let totalSalarios = 0;
+        let maiorIdade = -1;
+        let menorIdade = 150;
+        let quantidadeMulheres = 0;
+        let menorSalario = Number.MAX_VALUE;
+        let idadeMenorSalario;
+        let sexoMenorSalario;
 
+        let totalPessoas = 0;
+        while (true) {
 
-    //Processamento
+            let idade = parseInt(prompt("Digite a idade (ou um número negativo para encerrar a pesquisa):"));
 
+          
+            if (idade < 0) {
+                break;
+            }
 
-    //Saída
+            let salario = parseFloat(prompt("Digite o salário:"));
+            let sexo = prompt("Digite o sexo (M/F):").toUpperCase();
 
-</script>
+            // Processamento
+            totalSalarios += salario;
+            totalPessoas++;
+
+            if (idade > maiorIdade) {
+                maiorIdade = idade;
+            }
+            if (idade < menorIdade) {
+                menorIdade = idade;
+            }
+            if (sexo === "F") {
+                quantidadeMulheres++;
+            }
+            if (salario < menorSalario) {
+                menorSalario = salario;
+                idadeMenorSalario = idade;
+                sexoMenorSalario = sexo;
+            }
+        }[
+            
+        ]
+        //saída
+        let mediaSalarios = totalSalarios / totalPessoas;
+        document.write("a) A média dos salários do grupo é: " + mediaSalarios.toFixed(2) + "<br>");
+        document.write("b) A maior idade do grupo é: " + maiorIdade + "<br>");
+        document.write("   A menor idade do grupo é: " + menorIdade + "<br>");
+        document.write("c) A quantidade de mulheres na região é: " + quantidadeMulheres + "<br>");
+        document.write("d) A idade da pessoa com o menor salário é: " + idadeMenorSalario + "<br>");
+        document.write("   O sexo da pessoa com o menor salário é: " + sexoMenorSalario + "<br>");
+    </script>
+

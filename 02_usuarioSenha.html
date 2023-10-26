@@ -1,16 +1,22 @@
 <meta charset="UTF-8">
-<script>
-    /*
-    Problema: Validar Usuário e Senha
-    Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações.
-    */
+    <script>
+        /*
+        Problema: Validar Usuário e Senha
+        Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as informações.
+        */
 
-    //Entrada
-
-
-    //Processamento
-
-
-    //Saída
-
-</script>
+        while (true) {
+            // Entrada
+            let usuario = prompt("Digite seu nome de usuário:");
+            let senha = prompt("Digite sua senha:");
+            // Processamento
+            if (usuario === senha) {
+                alert("A senha não pode ser igual ao nome de usuário. Tente novamente.");
+            } else {
+                alert("Usuário e senha válidos. Bem-vindo, " + usuario);
+                break; 
+            }
+        }
+        // Saída
+    </script>
+</
